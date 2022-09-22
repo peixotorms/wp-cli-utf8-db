@@ -3,7 +3,7 @@
 # https://developer.wordpress.org/reference/functions/maybe_convert_table_to_utf8mb4/
 
 # Create array of all tables
-WPTABLES=($(wp db tables --all-tables))
+WPTABLES=($(wp db tables --all-tables --allow-root))
 
 # loop through array and alter tables
 for WPTABLE in ${WPTABLES[@]}
