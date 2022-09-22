@@ -9,6 +9,6 @@ WPTABLES=($(wp db tables --all-tables --allow-root))
 for WPTABLE in ${WPTABLES[@]}
 do
     echo "Converting ${WPTABLE} to UTF8MB4"
-    wp eval "echo new_maybe_convert_table_to_utf8mb4( ${WPTABLE} );" --allow-root
+    wp eval "echo maybe_convert_table_to_utf8mb4( ${WPTABLE} );" --allow-root
     echo "Converted ${WPTABLE} to UTF8MB4"
 done
